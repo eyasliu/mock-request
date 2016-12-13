@@ -9,7 +9,6 @@ const query = ((search) => {
 	})
 	return data;
 })(window.location.search)
-console.log(query)
 
 export default class App extends Component{
 	constructor(props){
@@ -49,7 +48,7 @@ export default class App extends Component{
 	render(){
 		return (
 			<div className="container">
-				<div className="form">
+				{/*<div className="form">
 					<div className="form-line">
 						<select 
 							name="method" 
@@ -60,16 +59,16 @@ export default class App extends Component{
 						</select>
 						<input type="text" value={this.state.path} onChange={e => this.setState({path: e.target.value})} />
 					</div>
-					{/*<div className="form-line">
+					{<div className="form-line">
 						<textarea name="body" value={this.state.body} onChange={e => this.setState({body: e.target.value})}></textarea>
 					</div>
 					<div className="form-line">
 						<textarea name="header" onChange={e => this.setState({header: e.target.value})}></textarea>
-					</div>*/}
+					</div>}
 					<div className="form-line">
 						<button onClick={::this.submit}>发起请求</button>
 					</div>
-				</div>
+				</div>*/}
 				{this.state.res && <pre className="code">{this.state.res}</pre>}
 			</div>
 		)
