@@ -19,8 +19,8 @@ const config = {
                 test: /\.js$/,
                 loader: 'babel'
             }, {
-                test: /\.vue$/,
-                loader: 'vue'
+                test: /\.css$/,
+                loader: 'style!css!less'
             }
         ]
     },

@@ -16,7 +16,7 @@ export default class App extends Component{
 		this.state = {
 			res: '',
 			method: (query.method && query.method.toUpperCase()) || 'GET',
-			path: query.path || '',
+			path: query.path || '/',
 			body: ''
 		}
 		if(query.submit){
@@ -48,7 +48,7 @@ export default class App extends Component{
 	render(){
 		return (
 			<div className="container">
-				{/*<div className="form">
+				<div className="form">
 					<div className="form-line">
 						<select 
 							name="method" 
@@ -58,17 +58,18 @@ export default class App extends Component{
 							{methods.map(item => <option value={item}>{item}</option>)}
 						</select>
 						<input type="text" value={this.state.path} onChange={e => this.setState({path: e.target.value})} />
+						<button onClick={::this.submit}>发起请求</button>
 					</div>
-					{<div className="form-line">
+					{/*<div className="form-line">
 						<textarea name="body" value={this.state.body} onChange={e => this.setState({body: e.target.value})}></textarea>
 					</div>
 					<div className="form-line">
 						<textarea name="header" onChange={e => this.setState({header: e.target.value})}></textarea>
-					</div>}
-					<div className="form-line">
+					</div>*/}
+					{/*<div className="form-line">
 						<button onClick={::this.submit}>发起请求</button>
-					</div>
-				</div>*/}
+					</div>*/}
+				</div>
 				{this.state.res && <pre className="code">{this.state.res}</pre>}
 			</div>
 		)
