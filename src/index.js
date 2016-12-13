@@ -1,10 +1,7 @@
-import Vue from 'vue/dist/vue.js'
+import 'whatwg-fetch'
+import { h, render } from 'preact'
+import App from './App'
 
-const vm = new Vue({
-	el: "#app",
-	data: {
-		msg: "hello"
-	},
-	template: "<span>{{msg}}</span>"
-})
-console.log(vm)
+render((
+    <App />
+), document.body);

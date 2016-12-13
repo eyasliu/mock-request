@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch"
+    "dev": "cross-env NODE_ENV=development webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -18,18 +19,21 @@
   },
   "homepage": "https://github.com/eyasliu/mock-request#readme",
   "dependencies": {
-    "vue": "^2.1.4",
-    "vue-antd": "^0.2.9",
-    "webpack-dev-server": "^1.16.2"
+    "cross-env": "^3.1.3",
+    "preact": "^7.1.0",
+    "superagent": "^3.2.1",
+    "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.20.0",
     "babel-loader": "^6.2.9",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.1",
     "vue-loader": "^10.0.2",
     "vue-template-compiler": "^2.1.4",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }

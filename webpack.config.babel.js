@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import path from 'path'
 
 const join = (...args) => path.join(__dirname, ...args)
-
+const isDev = process.env.NODE_ENV === 'development'
 const config = {
     entry: {
         index: "./src/index.js"
@@ -12,6 +12,7 @@ const config = {
         filename: '[name].js',
         publicPath: '/dest/'
     },
+    devtool: isDev ? 'eval' : false,
     module: {
         loaders: [
             {
@@ -31,5 +32,17 @@ const config = {
     ]
 
 }
+if(isDev){
+
+} else {
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      comments: false
+    }))
+}
+
+
 
 export default config
